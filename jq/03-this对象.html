@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="div" style="">dasfdasf</div>
+	<script>
+	//this对象:谁调用函数，谁就是this
+	//1.window
+	function test(){
+		console.log(this);//window
+	}
+
+	window.test();
+	//2.
+	var oDiv=document.getElementById('div');
+	// console.log(typeof oDiv);
+	oDiv.onclick=function(){
+		console.log(this);
+	}
+	
+	</script>
+</body>
+</html>

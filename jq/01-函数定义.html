@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//函数定义方式
+	//补充：函数三要素：函数作用、函数参数、返回值
+	// 1.自定义函数
+	function fn1(a,b){//a,b形参
+		var c = a+b;
+		return c;
+	}
+
+	var res = fn1(1,2);//1,2实参
+	console.log(res);
+
+	//2.字面量方式
+	var fn2=function(x1,x2){
+		return x1+x2;
+	}
+
+	var res2 = fn2(3,4);
+	console.log(res2);
+
+	//3.实例化Function('形参名1','形参名2','函数体');
+	var fn3 = new Function('a','b','c','console.log(a+b+c)');
+	fn3(6,4,1);
+	//4.匿名函数：
+	// 语法：(function(形参){})(实参);
+	(function(){
+		console.log('你究竟喜欢我什么，我改还不行吗？');
+	})();
+
+	(function(str){
+
+		console.log(str+'你究竟喜欢我什么，我改还不行吗？');
+	})('凤姐');
+	
+	</script>
+</body>
+</html>

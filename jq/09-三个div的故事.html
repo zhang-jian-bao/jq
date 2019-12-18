@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div{
+		width: 100px;
+		height: 100px;
+		border: 1px solid #ddd;
+		background: pink;
+		margin-bottom: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script>
+	var aDiv=document.getElementsByTagName('div');
+	// for(var i=0;i<aDiv.length;i++){
+	// 	aDiv[i].index = i;
+	// 	// console.log(aDiv[i].index);
+	// 	aDiv[i].onclick=function(){
+	// 		// console.log(i);
+	// 		this.innerHTML = this.index;
+	// 	}
+	// }
+
+	for(var i=0;i<aDiv.length;i++){
+		(function(m){
+			aDiv[m].onclick=function(){
+				this.innerHTML=m;
+			}
+		})(i);
+	}
+
+	
+	//在内存中，遇到函数就会开辟新空间；
+	</script>
+</body>
+</html>

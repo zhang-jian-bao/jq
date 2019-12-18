@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin:0;
+			list-style: none;
+		}
+		div{
+			width: 400px;
+			margin:100px auto;
+			border: 1px solid #ddd;
+		}
+		div ul{	
+			overflow: hidden;
+			text-align: center;
+			/*clear: both;*/
+			/*height: 40px;*/
+		}
+		div ul li{
+			float: left;
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			background: #eee;
+		}
+		div ul li:hover{
+			background: orange;
+		}
+		div ol{
+			padding: 10px;
+		}
+		div ol li{
+			height: 200px;
+			background: orange;
+			display: none;
+		}
+		/*原子类*/
+		.current{
+			display: block;
+		}
+		.active{
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<div id="tab">
+		<ul>
+			<li class="active">高志</li>
+			<li>刘天野</li>
+			<li>王选雨</li>
+			<li>包孔泉</li>
+		</ul>
+		<ol>
+			<li class="current">高志高志高志高志高志</li>
+			<li>刘天野刘天野刘天野刘天野刘天野</li>
+			<li>王选雨王选雨王选雨王选雨</li>
+			<li>包孔泉包孔泉包孔泉包孔泉包孔泉包孔泉包孔泉</li>
+		</ol>
+	</div>
+	<script>
+	var oTab = document.getElementById('tab');
+	var oUl=oTab.getElementsByTagName('ul')[0];
+	var aLi=oUl.getElementsByTagName('li');
+	var oOl=oTab.getElementsByTagName('ol')[0];
+	var oLi=oOl.getElementsByTagName('li');
+	for(var i=0;i<aLi.length;i++){
+		// console.log(i);
+		aLi[i].index = i;//给每个li添加一个自定义属性index，保存每个li的下标
+		aLi[i].onclick=function(){
+			// console.log(aLi[i].index);//错误
+			// console.log(this.index);//
+			for(var m=0;m<aLi.length;m++){
+				aLi[m].className = '';
+			}
+			this.className = 'active';
+			
+			for(var j=0;j<oLi.length;j++){
+				oLi[j].className= '';
+			}
+			oLi[this.index].className = 'current';
+		}
+	}
+
+
+
+	</script>
+</body>
+</html>

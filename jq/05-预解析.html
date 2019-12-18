@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//作用域链：
+//case1
+	// var a = 1;
+	// function test(){
+	// 	console.log(a);
+	// }
+
+	// test();
+
+//case2
+	// var a = 1;
+	// function test(){
+	// 	console.log(a);//undefined
+	// 	var a = 2;
+	// }
+
+	// test();
+
+	//js执行分为两个阶段：
+		// 预解析：1.主要是将var声明的变量和以function声明函数提升,
+		// 			2.字面量函数不被提升
+		//执行阶段：
+	//提升之后的代码：
+	// var a;
+	// function test(){
+	// 	var a;
+	// 	console.log(a);//undefined
+	// 	a = 2;
+	// }
+
+
+	// a = 1;
+	// test();
+
+//case3
+	// function test(){
+	// 	console.log(a);
+	// 	var a = 1;
+	// 	console.log(a);
+	// }
+	// test();
+//case4
+
+	// fn1();
+
+	// var fn1=function(){
+	// 	console.log(a);
+	// 	var a=1;
+	// 	console.log(a);
+	// }
+
+//case5
+
+	// function fn1(){
+	// 	console.log(a);
+	// 	var a=1;
+	// 	console.log(a);
+	// }
+	// fn1();
+
+
+
+	</script>
+</body>
+</html>

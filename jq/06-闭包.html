@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//在函数外部，就想访问函数内的局部变量a?
+	// function test(){
+	// 	var a =1;//局部变量
+	// }
+	// test();
+	// console.log(a);
+
+	//case2:
+	function test(){
+		var a =1;//局部变量
+		//函数inner访问局部变量a,
+		function inner(){
+			console.log(a);
+		}
+		return inner;//将函数inner的地址
+	}
+	var fn = test();
+	// console.log(fn);
+	fn();
+
+	</script>
+</body>
+</html>
