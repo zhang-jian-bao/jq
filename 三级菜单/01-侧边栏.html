@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.side-bar{
+			position: fixed;
+			right:-100px;
+			bottom:50px;
+			/*background: red;*/
+			clear: both;
+		}
+		.side-bar div{
+			float: left;
+		}
+		.side-bar .btn{
+			width: 40px;
+			height: 40px;
+			background: pink;
+			font-size: 12px;
+		}
+
+		.side-bar .content{
+			width: 100px;
+			height: 150px;
+			background: blue;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="side-bar">
+		<div class="btn">显示和隐藏</div>
+		<div class="content">内容</div>
+	</div>
+</body>
+</html>
+<script src="考试/js/jquery-3.4.1.js"></script>
+<script>
+	$('.btn').click(function(){
+		//让内容显示和隐藏的临界条件：.side-bar盒子的right值
+		// var r = $(this).parent().position().right;
+		// var r = parseInt($(this).parent().css('right'));
+		// console.log('隐藏时候的.side-bar盒子的值',r);//-100px
+
+		// $(this).parent().animate({right:'+=100px'},1000);
+
+		// var r = parseInt($(this).parent().css('right'));
+		// console.log('显示时候的.side-bar盒子的值',r);//-100px
+
+		var r = parseInt($(this).parent().css('right'));
+		if(r==-100){
+			//显示
+			$(this).parent().animate({right:'+=100px'},1000);
+		}else{
+			//隐藏
+			$(this).parent().animate({right:'-=100px'},1000);
+		}
+	})
+
+
+
+</script>

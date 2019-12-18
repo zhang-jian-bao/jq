@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div{
+		width: 100px;
+		height: 100px;
+		background: red;
+		display: none;
+	}
+	</style>
+</head>
+<body>
+	<input type="button" value="开始显示动画">
+	<input type="button" value="隐藏">
+	<input type="button" value="隐藏|显示">
+	<input type="button" value="淡入">
+	<input type="button" value="淡出">
+	<input type="button" value="淡入|淡出">
+	<input type="button" value="滑入">
+	<input type="button" value="滑出">
+	<input type="button" value="滑入|滑出">
+	<div></div>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+	$(':button:eq(6)').click(function(){
+		
+		// $('div').slideDown();
+		$('div').slideDown(3000);
+		// $('div').slideDown(1000,function(){
+		// 	$(this).html("hello div");
+		// });
+	})
+	$(':button:eq(7)').click(function(){
+		
+		// $('div').slideDown();
+		$('div').slideUp(3000);
+		// $('div').fadeOut(1000,function(){
+		// 	$(this).html("hello div");
+		// });
+	})
+	$(':button:eq(8)').click(function(){
+		
+		// $('div').fadeToggle();
+		$('div').slideToggle(3000);
+		// $('div').fadeOut(1000,function(){
+		// 	$(this).html("hello div");
+		// });
+	})
+	//1.分析涉及到元素  2
+	//2.获取元素
+	//3.绑定事件
+	//4.执行程序
+	$(':button:eq(0)').click(function(){
+		// $('div').css({display:'block'});
+		// $('div').show();
+		$('div').show(1000);
+		// $('div').show(1000,function(){
+		// 	$(this).html("hello div");
+		// });
+	})
+	$(':button:eq(1)').click(function(){
+		// $('div').css({display:'none'});
+		// $('div').hide();
+		$('div').hide(1000);
+		// $('div').hide(1000,function(){
+		// 	$(this).html("hello div");
+		// });
+	})
+	$(':button:eq(2)').click(function(){
+		
+		// $('div').toggle();
+		// $('div').toggle(1000);
+		$('div').toggle(1000,function(){
+			$(this).html("hello div");
+		});
+	})
+	$(':button:eq(3)').click(function(){
+		
+		// $('div').fadeIn();
+		// $('div').fadeIn(3000);
+		$('div').fadeIn(1000,function(){
+			$(this).html("hello div");
+		});
+	})
+	$(':button:eq(4)').click(function(){
+		
+		// $('div').fadeOut();
+		$('div').fadeOut(3000);
+		// $('div').fadeOut(1000,function(){
+		// 	$(this).html("hello div");
+		// });
+	})
+	$(':button:eq(5)').click(function(){
+		
+		// $('div').fadeToggle();
+		$('div').fadeToggle(3000);
+		// $('div').fadeOut(1000,function(){
+		// 	$(this).html("hello div");
+		// });
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body,div,ul,li,ol,dl,dd,dt,img,p{
+			padding:0;
+			margin:0;
+			list-style: none;
+		}
+		/*头部布局开始*/
+		.head{
+			width: 1000px;
+			margin:0 auto;
+			background: pink;
+		}
+		.head .search{
+			height: 100px;
+			background: blue;
+		}
+		.nav ul{
+			clear: both;
+			height: 40px;
+		}
+		.nav ul>li{
+			float: left;
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+		}
+		.nav ul>li:nth-of-type(1){
+			width: 150px;
+			background: orange;
+			position: relative;
+		}
+		.nav ol{
+			position: absolute;
+			top:40px;
+			left: 0;
+			background: pink;
+			width: 150px;
+		}
+		.nav ol>li{
+			height: 40px;
+			position: relative;
+			/*margin-bottom: 5px;*/
+			border-bottom: 1px solid #fff;
+		}
+		.nav dl{
+			position: absolute;
+			top:0;
+			left: 150px;
+			background: green;
+			width: 300px;
+			display: none;
+			z-index: 10;
+		}
+		/*头部布局结束*/
+		/*.banner 开始*/
+		.banner{
+			width: 100%;
+			background: #ddd;
+
+		}
+		.lunbo{
+			width: 850px;
+			margin:0 auto;
+			background: red;
+			/*height: 400px;	*/
+			padding-left: 150px;
+		}
+		.lunbo>ul{
+			/*margin-left: 150px;*/
+			position: relative;
+			height: 400px;
+			overflow: hidden;
+
+		}
+		.lunbo>ul>li{
+			position: absolute;
+			top:0;
+			left: 0;
+		}
+		.lunbo>div{
+			background: blue;
+			width: 200px;
+		}
+		.lunbo div>span{
+			position: absolute;
+			top:350px;
+			left: 460px;
+			background: blue;
+			width: 20px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+/*			display: none;*/
+			opacity: 0;
+		}
+		.lunbo div>span:nth-of-type(2){
+			left: 1080px;
+		}
+		/*.banner 结束*/
+	</style>
+</head>
+<body>
+	<!-- 
+		1.骨架
+		2.css样式
+		3.功能实现
+	 -->
+	<!-- div.head>div.search+div.nav>ul>li*6 -->
+	<div class="head">
+		<div class="search"></div>
+		<div class="nav">
+			<ul>
+				<li>
+					<div><img src="img/list.png" alt=""></div>
+					<ol>
+						<li>
+							<div>服饰内衣/运动户外</div>
+							<dl>
+								<dt>服饰内衣/运动户外</dt>
+								<dd>
+									内容
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<div>服饰内衣/运111</div>
+							<dl>
+								<dt>服饰内衣111</dt>
+								<dd>
+									内容11
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<div>服饰内衣/222</div>
+							<dl>
+								<dt>222</dt>
+								<dd>
+									内容222
+								</dd>
+							</dl>
+						</li>
+					</ol>
+				</li>
+				<li>9.9 特卖</li>
+				<li>限时清仓</li>
+				<li>促两元店</li>
+				<li>五金机电</li>
+				<li>关于热销市场</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 通栏 -->
+	<div class="banner">
+			<!-- 水平居中 -->
+			<div class="lunbo">
+				<!-- 轮播内 -->
+				<ul>
+					<li><img src="img/1.jpg" alt=""></li>
+					<li><img src="img/2.jpg" alt=""></li>
+					<li><img src="img/3.jpg" alt=""></li>
+				</ul>
+				<!-- 轮播内 -->
+				<!-- 小方块 -->
+				<ol>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<!-- 小方块 -->
+				<!-- 左右按钮 -->
+				<div>
+					<span class="left"><</span>
+					<span class="right">></span>
+				</div>
+			</div>
+			<!-- 最右边的广告框 -->
+			<p></p>
+	</div>
+</body>
+</html>
+<script src='js/jquery-3.4.1.js'></script>
+<script>
+	//左右按钮显示、隐藏
+	$('.lunbo').hover(function(){
+		//让左右按钮移入图片
+		$('.left').animate({left:"+=40px",opacity:"1"},500);
+		$('.right').animate({left:"-=40px",opacity:"1"},500);
+	},function(){
+		$('.left').animate({left:"-=40px",opacity:"0"});
+		$('.right').animate({left:"+=40px",opacity:"0"});
+	})
+
+	//鼠标移入显示二级菜单
+	$('.nav ol>li').mouseover(function(){
+		var index = $(this).index();
+		// console.log(index);
+		$('.nav li>dl').eq(index).show().parent().siblings().find('dl').hide();
+	})
+	//鼠标移出隐藏二级菜单
+	$('.nav ol>li').mouseout(function(){
+		// var index = $(this).index();
+		// console.log(index);
+		$('.nav li>dl').hide();
+	})
+
+</script>

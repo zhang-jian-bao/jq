@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>第三题</title>
+    <!--3、写出核心代码，完成选项卡切换的效果，闭包的形式。
+        （****）tips:获取索引  隐藏后点击让对应的选项显示-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #tab {
+            width: 600px;
+            height: 500px;
+            border: 1px solid #000000;
+            margin: 0 auto;
+        }
+
+
+        #tab>ul {
+            overflow: hidden;
+            text-align: center;
+            /* clear: both;
+             height: 40px;*/
+        }
+
+        div ul li {
+            float: left;
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            /*行高*/
+            background: #df09f2;
+        }
+
+        div ul li:hover {
+            background: #f0aebf;
+        }
+
+        div ol {
+            padding: 10px;
+        }
+
+        div ol li {
+            height: 100px;
+            background: #ed295c;
+            display: none;
+        }
+
+        /*原子类*/
+        .current {
+            display: block;
+        }
+
+        .active {
+            background: #f0aebf;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tab">
+        <ul>
+            <li class="active">生活</li>
+            <li>世界</li>
+            <li>心情</li>
+            <li>拜拜了</li>
+        </ul>
+        <ol>
+            <li class="current">生活给我折磨的想死</li>
+            <li>世界你好我可以和您请个假吗？</li>
+            <li>真的是无味杂陈</li>
+            <li>你好世界拜拜了</li>
+        </ol>
+    </div>
+    <script>
+        var oTab = document.getElementById("tab");
+        var oUl = oTab.getElementsByTagName("ul")[0];
+        var aLi = oUl.getElementsByTagName("li");
+        var oOl = oTab.getElementsByTagName("ol")[0];
+        var aLi1 = oOl.getElementsByTagName("li");
+
+
+        for (var i = 0; i < aLi.length; i++) {
+            //给每一个ul下面的li添加事件处理器
+            (function (k) {
+                aLi[k].onclick = function () {
+                    console.log(k)
+                    aLi1[k].style.display = 'block';
+                    //遍历所有的ol下的li，都变成隐藏，除了用户选择的对应序号的li以外。
+                    for (var j = 0; j < aLi1.length; j++) {
+                        if (k != j) {
+                            aLi1[j].style.display = 'none';
+                        }
+                    }
+                }
+            })(i)
+        }
+
+    </script>
+</body>
+</html>

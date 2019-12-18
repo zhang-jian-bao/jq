@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery如何注册事件</title>
+
+    <style>
+        li{
+            width: 100px;
+            height: 30px;
+            background-color: blueviolet;
+            border: 2px solid black;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="nav">
+        <ul>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+            <li>05</li>
+        </ul>
+    </div>
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+    
+        $(function(){
+
+            //如何在元素上注册事件处理器
+            //1.bind():为jQuery对象内含元素添加一个事件处理函数，支持可选的data参数。
+            //  （该方法在jQuery库3.0后已经过时，但并没有被移除）
+            $('#nav ul li').bind('mouseover',{name:'world'}, function(event){
+                console.log('hi' + $(this).text());
+                //如何在事件处理器中获取到该数据；用event.data获取数据
+                console.log(event.data.name);
+            });
+
+            $('#nav ul li').bind('mouseover',{name:'world'}, function(event){
+                console.log('hi' + $(this).text());
+                //如何在事件处理器中获取到该数据；用event.data获取数据
+                console.log(event.data.name);
+            });
+            //2.unbind() :撤销之前绑定在jQuery对象内含元素上的所有事件处理函数（该方法在jQuery库3.0后已经过时，但并没有被移除）
+            $('#nav ul li').unbind('mouseover');
+            
+        }); //
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>新员工入职</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .box {
+            width: 1000px;
+            margin: auto;
+            text-align: center;
+            border-bottom: 2px dotted #999999;
+            margin-bottom: 20px;
+            padding: 20px 0px;
+        }
+
+        .box>p {
+            margin: 10px 0px;
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+            height: 30px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        table {
+            width: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="box">
+        <p>添加新员工</p>
+        name：<input type="text" class="xm" /> email：
+        <input type="text" class="yx" /> salary：
+        <input type="text" class="xz" /><br /><br />
+        <button>Submit</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th style="width: 150px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="display: none;">
+                <td>姓名</td>
+                <td>邮箱</td>
+                <td>薪资</td>
+                <td>删除</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+<script src="js/jquery-3.4.1.js"></script>
+<script>
+    $(document).ready(function () {
+        //添加点击事件
+        $('button').click(function () {
+            //判断：如果文本框为空停止函数
+            $('input').each(function () {
+                if ($(this).val() == '') {
+                    alert('请输入信息');
+                    $(this).stopPropagation(); //阻止事件冒泡
+                    $(this).preventDefault(); //阻止默认事件
+                }
+            })
+
+
+            //获取文本框值
+            let xm = $('.xm').val();
+            let yx = $('.yx').val();
+            let xz = $('.xz').val();
+
+            var str = '';
+            str += '<tr>';
+            str += '<td>'+xm+'</td>'
+			str += '<td>'+yx+'</td>'			
+			str += '<td>' +xz+'</td>'			
+			str += '<td><a href="#" class="del">Delete</a></td></tr>';	
+            $('tbody').append(str);	
+            // $('tbody').append(
+            //     $(`
+			// 		<tr>
+			// 			<td>${xm}</td>
+			// 			<td>${yx}</td>
+			// 			<td>${xz}</td>
+			// 			<td><a href="#" class="del">Delete</a></td>
+			// 		</tr>
+			// 		`));
+
+
+            //添加完成后文本框清空
+            $('.xm').val('');
+            $('.yx').val('');
+            $('.xz').val('');
+
+            //删除事件
+            $('.del').click(function () {
+                $(this).parent().parent().remove();
+            })
+        })
+    })
+</script>
+
+
+</html>

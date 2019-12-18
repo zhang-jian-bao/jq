@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>如何选择更多的元素</title>
+</head>
+
+<body>
+    <div id="nav">
+        <ul>
+            <li class="o1">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <div id="main">
+        <ol>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+            <li>05</li>
+        </ol>
+    </div>
+
+
+    <!-- 
+        2.4 has 基于后代的过滤方法
+     -->
+    <!-- <ul>
+        <li>list item 1</li>
+        <li>list item 2
+            <ul>
+                <li>list item 2-a</li>
+                <li>list item 2-b</li>
+            </ul>
+        </li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+    </ul> -->
+
+
+    <!-- 5.1 获取第一次选择的集合和第二次选择的集合的合集 -->
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li class="third-item">list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+    </ul>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            //一、如何选择更多的元素的案例：
+            //$('#nav ul li').add('#main ol li:odd').css('border', '1px solid blue');
+
+            //二、限制选择的元素
+            //2.1 first(),在已经选中的元素中选择第一个元素
+            //$('#nav li').first().css('background', 'red');
+            //2.2 last(),在已经选中的元素中选择最后一个元素
+            //$('#nav li').last().css('background', 'blue');
+            ////2.3 eq(),在已经选中的元素中选择索引等于eq(index)的那个元素。
+            //$('#nav li').eq(1).css('background', 'green');
+            //2.4 has(),在选中的元素的后代里面进行过滤；
+            //$( "li" ).has( "ul" ).css( "background-color", "red" );
+            //2.5 not(),在选中的元素中，删除符合条件的元素；
+            // $('#nav li').not('#nav li:odd').css( "background-color", "red" );
+            //2.6 filter(), 在选中的元素中，保留符合条件的元素
+            //$('#nav li').filter('#nav li:odd').css( "background-color", "red" );
+            // $('#nav li').filter(function(index, elem){
+            //     //console.log(elem);
+            //     if (index % 2 == 0){
+            //         //elem.style.border =  '1px solid blue';
+            //         $(elem).css('border',  '1px solid red' );
+            //     }
+            // });
+            //2.7 截取选择的元素slice(start, end),包含start，不包含end
+            //$('#nav li').slice(1, 3).css('border',  '1px solid red' );
+            //三、以映射的方式来处理结果集
+            // $('#nav li').map(function(index, elem){
+            //     if (index == 0 ){
+            //         $(elem).css('background', 'green')
+            //     }
+
+            // })
+            //四、检测结果集合
+            // var b = $('#nav li').is('.o11');
+            // console.log(b)
+            //五、回退和修改结果集
+            //5.1
+            //$('li.third-item').nextAll().addBack().css('background', 'yellow');
+            //5.2 end,扔掉当前，返回上一个
+            $('li.third-item').nextAll().end().css('background', 'yellow');
+        }); //
+    </script>
+</body>
+
+</html>

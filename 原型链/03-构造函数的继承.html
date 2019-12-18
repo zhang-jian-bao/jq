@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//思想：Zi只继承了Fu的构造函数
+	function Fu(nam){
+		this.nam= nam;
+		this.say=function(){
+			console.log('我对钱没有兴趣，我对干女儿比较感兴趣');
+		}
+	}
+	Fu.prototype.GetMoney=function(){
+		console.log('马云有很多钱,10个亿');
+	}	
+
+	function Zi(){
+		//Zi只继承了Fu的构造函数
+		Fu.call(this,'马云111');
+	}
+	var obj_zi = new Zi();
+	console.log(obj_zi.nam);
+	obj_zi.say();
+	obj_zi.GetMoney();
+
+	</script>
+</body>
+</html>

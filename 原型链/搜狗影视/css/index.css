@@ -1,0 +1,54 @@
+/*css init start*/
+body,ul,li,ol,dl,dd,dt,img,p{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+img{
+	vertical-align: top;
+}
+/*css init end*/
+/*轮播图开始*/
+.banner{
+	width: 100%;
+	background: #eee;
+}
+.ban-con{
+	position: relative;
+} 
+.ban-con ul{
+	height: 370px;
+}
+.ban-con ul>li{
+	position:absolute;
+	top:0;
+	left: 0;
+}
+.ban-con ul>li>div{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom:0px;
+	background: black;
+	opacity: 0.5;
+	
+	height: 40px;
+}
+.ban-con ul>li>p{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom:0px;
+	color: #fff;
+	height: 40px;
+	line-height:40px;
+}
+/*轮播图结束*/
+/*原子类开始*/
+.core{
+	width: 1085px;
+	margin:0 auto;
+	background: red;
+}
+
+/*原子类结束*/

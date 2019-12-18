@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>call和apply</title>
+</head>
+<body>
+    
+
+    <script>
+    
+        function say(a, b){
+            console.log(this);
+            console.log('我是say函数');
+            return 100
+        }
+        var obj = {
+            name : "tom"
+        }
+        var obj1 = {
+            name : "mark"
+        }
+        say.call(obj1,1,2);         //  say(1, 2)
+        say.apply(obj, [1, 2]);
+        //console.log(say.call());   //  <=> say()
+        
+    </script>
+</body>
+</html>

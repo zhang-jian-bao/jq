@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*css init start*/
+		body,ul,li,ol,p,img{
+			margin:0;
+			padding:0;
+			list-style: none;
+		}
+		/*css init end*/
+		/*tab start*/
+		div.box{
+			width: 400px;
+			margin:60px auto 0px;
+			border: 1px solid #eee;
+			padding: 0px 20px 50px 20px;
+			/*overflow: hidden;*/
+			position: relative;
+			height: 341px;
+		}
+		.box ul{
+			position: absolute;
+			top:0px;
+			left: 20px;
+			overflow: hidden;
+			/*width: 10000px;*/
+			height: 1200px;
+			width: 400px;
+		}
+		.box ul li{
+			/*margin-right: 20px;*/
+			/*float: left;*/
+			padding-bottom: 50px;
+		}
+		.box img{
+			width: 400px;
+		}
+
+		.box div span{
+			position: absolute;
+			top:200px;
+			left: 0px;
+			width: 20px;
+			height:40px;
+			background: #eee;
+			line-height: 40px;
+			text-align: center;
+		}
+		.box div span.right{
+			left: 420px;
+		}
+		.box p{
+			width: 400px;
+			border-bottom: 1px solid #eee;
+			padding:20px 0 20px 0;
+		}
+		.box ol{
+			position: absolute;
+			bottom:20px;
+			left: 140px;
+			/*background: #eee;*/
+			overflow: hidden;
+		}
+		.box ol li{
+			width: 15px;
+			height: 15px;
+			border: 1px solid #ddd;
+			border-radius: 50%;
+			float: left;
+			margin-right: 10px;
+		}
+		/*tab end*/
+		/*auto class start*/
+		.active{
+			background: red;
+		} 
+		.box ol li.current{
+			display: block;
+		}
+		/*auto class end*/		
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li>
+				<img src="img/凤姐.jpg" alt="">
+				<p>你好1</p>
+			</li>
+			<li>
+				<img src="img/凤姐.jpg" alt="">
+				<p>你好2</p>		
+			</li>
+			<li>
+				<img src="img/凤姐.jpg" alt="">
+				<p>你好3</p>
+			</li>
+		</ul>
+		<div>
+			<span class='left'><</span>
+			<span class='right'>></span>
+		</div>
+		<ol>
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div>
+	<div style="height:30px;background:red;"></div>
+</body>
+</html>
+	<script src="js/jquery-3.4.1.js"></script>	
+	<script>
+	var index = 0;
+		//左按钮
+		$('.box .left').click(function(){
+			index--;
+			// $('.box ul').clone().appendTo($('.box'));
+			// console.log($('.box ul').clone());
+			if(index <=-1){
+				index =2;
+			}
+			var sTop = -(index*391)+'px';
+			$('.box ul').animate({top:sTop},1000);//所有兄弟元素删除active  
+			$('ol li').eq(index).toggleClass('active').siblings().removeClass('active');	
+		})
+
+
+
+	</script>

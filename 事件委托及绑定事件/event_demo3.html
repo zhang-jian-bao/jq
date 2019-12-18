@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery对象的事件委托</title>
+    <style>
+        li {
+            width: 100px;
+            height: 30px;
+            background-color: blueviolet;
+            border: 2px solid black;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <ul>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+            <li>05</li>
+        </ul>
+    </div>
+    <form action="http://www.baidu.com">
+        <button>你好</button>
+    </form>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        
+        $(function(){
+            // //事件的委托——基于事件的冒泡原理来实现的
+            // $('#nav').on('click',function(){
+            //     console.log($(this).attr('id'));
+            // })
+            // //委托到父元素上
+            // $('#nav ul').on('click', function(event){
+            //     //事件对象都会关联一个事件源
+            //     console.log(event.target)   //会获取到产生事件的事件源对象
+            //     event.stopPropagation();    //阻止事件的向上的冒泡
+            //     event.preventDefault();     //阻止默认事件
+            //     console.log('我是ul');
+            // })
+                $('button').on('click', function(event){
+                    event.preventDefault();
+                    console.log('dsfsdfs');
+                })
+        });//
+
+    </script>
+</body>
+
+</html>

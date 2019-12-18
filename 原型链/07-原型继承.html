@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function Fu(){
+		this.nam="张三";
+		this.say=function(){
+			console.log('大家好,我是'+this.nam);
+		}
+	}
+	var obj = new Fu();
+	console.log(obj.nam);
+	obj.say();
+
+	function Zi(){
+		this.say=function(){
+			console.log('哈哈,我是儿子方法');
+		}
+	}
+	Zi.prototype = new Fu();
+	var obj_zi = new Zi();
+
+	console.log(obj_zi.nam);
+	obj_zi.say();
+
+	</script>
+</body>
+</html>

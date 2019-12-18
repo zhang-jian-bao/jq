@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第九单元技能题1.</title>
+    <style>
+        table,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" name=""  id="selectAll">全选</th>
+                <th><button>删除</button></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="a1" id=""></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="a2" id=""></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="a3" id=""></td>
+                <td>24</td>
+                <td>25</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="a4" id=""></td>
+                <td>245</td>
+                <td>245</td>
+                <td>245</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="a5" id=""></td>
+                <td>wre</td>
+                <td>wer</td>
+                <td>wer</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+            $('#selectAll').click(function(){
+                console.log($('input:checkbox').not('#selectAll').length);
+                if ($(this).prop('checked')){
+                    $('input:checkbox').not('#selectAll').prop('checked', true);
+                }else {
+                    $('input:checkbox').not('#selectAll').prop('checked', false);
+                }
+                
+            });
+
+            $("button").click(function(){
+                $(':checkbox:checked').not('#selectAll').each(function(index, elem){
+                    console.log(elem);
+                    $(elem).parent().parent().remove();
+                })
+            })
+        });//
+    
+    </script>
+</body>
+</html>

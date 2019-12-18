@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// var a =1;
+	function out(){
+
+		function inner(){
+			console.log(this);
+		}
+		inner();
+		// console.log(this);
+	}
+	window.out();  
+	// 内部自身查找a-》父级查找a=>一直往上找=》直到找到window,存在，使用，不存在，报错
+
+	// oDiv.onclick=function(){
+	// 	console.log(this);
+	// }
+
+	function Girl(){
+		// console.log(this);//构造函数this指向构造函数本身
+		this.name = "凤姐";
+	}
+	var obj = new Girl();//实例化
+	console.log(obj.name);
+
+
+
+	new Array()
+
+	</script>
+</body>
+</html>

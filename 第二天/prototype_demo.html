@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原型</title>
+</head>
+
+<body>
+
+
+    <script>
+        //原型是js内部的机制
+        //所有的函数都回自动的分配一个属性，属性名叫prototype，是一个对象
+        //原型的作用：就是给用构造函数创建出来的对象提供一个链接，链接到构造函数
+        //的原型上。
+        function abc() { }
+        console.log(abc.prototype);
+
+        function Person(name) {
+            this.name = name;
+        }
+        console.log(Person.prototype);
+
+        var tom = new Person('tom');    //
+        console.log(tom instanceof Person);
+
+        //链接到原型上，什么作用呢？
+        //原型查找
+        //当我们访问对象上的方法或者属性，首先，在对象自己身上搜索；
+
+
+        function Car(name) {
+            this.name = name;
+            this.run = function () {
+                console.log("突突突");
+            }
+        }
+        // Car.prototype.run = function () {
+        //     console.log(this.name + "突突突");
+        // }
+        //水果Fruit，数值属性：name、color、type；方法：eated
+        //创建苹果、橘子、香蕉对象。并且调用eated方法    
+        var c = new Car('四轮子');
+        var c1 = new Car('大四轮子');
+        console.log(c.run == c1.run);
+
+        console.log(c.name);
+        //console.log(c.age);
+
+        c.run();
+        c1.run();
+
+        function Fruit(name, color, type){
+            this.name = name;
+            this.color = color;
+            this.type = type;
+        }
+        Fruit.prototype.eated = function(){
+            console.log(this.name + " " + this.color + " " + this.type + "被吃了");
+        }
+
+        var f1 = new Fruit('苹果', '红', '红富士');
+        var f2 = new Fruit('橘子', '黄', '丑橘');
+        var f3 = new Fruit('香蕉', '黄', '芭蕉');
+        f1.eated();
+        f2.eated();
+        f3.eated();
+        
+
+
+
+    </script>
+</body>
+
+</html>

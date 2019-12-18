@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="-">
+	<input type="text" size="1" value="1">
+	<input type="button" value="+">
+	<script type="text/javascript" src = "js/jquery-3.4.1.js"></script>
+	<script>
+	//-
+	$('input:eq(0)').click(function(){
+		// var num = $('input:eq(1)').val()-0;
+		var num = $(this).next().val()-0;
+		num--;
+		if(num <1){
+			alert('数量至少为1');
+			return false;
+		}
+		$('input:eq(1)').val(num);
+
+	});
+	//+
+	$('input:eq(2)').click(function(){
+		// var num = $('input:eq(1)').val()-0;
+		var num = $(this).prev().val()-0;
+		num++;
+		if(num >10){
+			alert('库存只有为10');
+			return false;
+		}
+		$('input:eq(1)').val(num);
+
+	});
+	</script>
+</body>
+</html>

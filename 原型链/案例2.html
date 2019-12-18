@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        #nav ul {
+            list-style-type: none;
+
+        }
+
+        #nav {
+            clear: both;
+            overflow: hidden;
+        }
+
+        #nav ul li {
+            float: left;
+            width: 200px;
+        }
+
+        #main ul li {
+            width: 800px;
+            height: 540px;
+            background-color: blue;
+            display: none;
+        }
+
+        #main ul li:first-child {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <ul>
+            <li><a href="#">新闻</a></li>
+            <li><a href="#">体育</a></li>
+            <li><a href="#">军事</a></li>
+            <li><a href="#">娱乐</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <ul>
+            <li>新闻123456789</li>
+            <li>体育4567890-=</li>
+            <li>军事0ucgyuo-</li>
+            <li>娱乐对付韩国国会</li>
+        </ul>
+    </div>
+
+    <script>
+
+        var tabObj = {
+            tabAttr: document.getElementById('main').getElementsByTagName('li'),
+            show: function (tabMenuName) {
+                if (tabMenuName == '新闻') {
+                    for (var i = 0; i < this.tabAttr.length; i++) {
+                        if (i == 0) {
+                            this.tabAttr[0].style.display = 'block';
+                        } else {
+                            this.tabAttr[i].style.display = 'none';
+                        }
+                    }
+                } else if (tabMenuName == '体育') {
+                    for (var i = 0; i < this.tabAttr.length; i++) {
+                        if (i == 1) {
+                            this.tabAttr[1].style.display = 'block';
+                        } else {
+                            this.tabAttr[i].style.display = 'none';
+                        }
+                    }
+                } else if (tabMenuName == '军事') {
+                    for (var i = 0; i < this.tabAttr.length; i++) {
+                        if (i == 2) {
+                            this.tabAttr[2].style.display = 'block';
+                        } else {
+                            this.tabAttr[i].style.display = 'none';
+                        }
+                    }
+                } else if (tabMenuName == '娱乐') {
+                    for (var i = 0; i < this.tabAttr.length; i++) {
+                        if (i == 3) {
+                            this.tabAttr[3].style.display = 'block';
+                        } else {
+                            this.tabAttr[i].style.display = 'none';
+                        }
+                    }
+                }
+            }
+        };
+
+
+        var navObj = document.getElementById('nav');
+        navObj.onclick = function (event) {
+            event.preventDefault();     //阻止默认事件
+            event.stopPropagation();     //阻止冒泡
+            var m = event.target.innerHTML;
+            tabObj.show(m);
+        }
+        //var tab = document.getElementById('main').getElementsByTagName('li');
+        //console.log(tab);
+
+    </script>
+</body>
+
+</html>

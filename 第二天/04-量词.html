@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//+就是{1,}
+		//*就是{0,}
+		//?就是{0,1}
+
+	//case1 + 至少包含一个前导字符
+		// var str="php";
+		// // var reg=/ph{1,}p/;
+		// var reg=/ph+p/;
+		// var res = reg.test(str);
+		// if(res){
+		// 	alert(str);
+		// }else{
+		// 	alert('有的人有人进入猛鬼的梦想，');
+		// }
+	//case2 * 至少包含0个或者多个前导字符
+		// var str="php";
+		// // var reg=/ph{0,}p/;
+		// var reg=/ph*p/;
+		// var res = reg.test(str);
+		// if(res){
+		// 	alert(str);
+		// }else{
+		// 	alert('有的人有人进入猛鬼的梦想，');
+		// }
+	//case3 ？包含0个或者1个前导字符
+		// var str="phhp";
+		// // var reg=/ph{0,1}p/;
+		// var reg=/ph?p/;
+		// var res = reg.test(str);
+		// if(res){
+		// 	alert(str);
+		// }else{
+		// 	alert('有的人有人进入猛鬼的梦想，');
+		// }
+//case4 . 匹配任意字符
+//case5 $:	匹配字符串的行尾，一般加在字符串的尾巴上，表示从尾部开始匹配
+	// var reg=/php$/;
+	// var str="phphp";
+	// var res = reg.test(str);
+	// if(res){
+	// 	alert(str);
+	// }else{
+	// 	alert('有的人有人进入猛鬼的梦想，');
+	// }
+//case6: ^匹配字符串的行首，一般加在字符串的开头，表示从开头开始匹配
+	var reg=/^php/;
+	var str="phpphp";
+	var res = reg.test(str);
+	if(res){
+		alert(str);
+	}else{
+		alert('有的人有人进入猛鬼的梦想，');
+	}
+//case7
+	var reg=/^php$/;
+	var str="phpphp";
+	var res = reg.test(str);
+	if(res){
+		alert(str);
+	}else{
+		alert('有的人有人进入猛鬼的梦想，');
+	}
+	</script>
+</body>
+</html>

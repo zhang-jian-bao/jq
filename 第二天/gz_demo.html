@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>构造函数创建对象</title>
+</head>
+<body>
+    
+
+    <script>
+    
+        //构造函数是创建对象的模板
+        function Computer(cpu, mem, hard){
+            this.cpu = cpu;
+            this.mem = mem;
+            this.hard = hard;
+            this.game = function(){
+                console.log(this.cpu + '运行dota');
+            }
+            console.log(this);
+        }
+
+        var lenovo = new Computer('i7', '16g', '1t');
+        //new关键字创建对象的时候，都经历了哪些步骤：
+        //step.1 在内存中创建一块存储要创建的对象的空间；
+        //step.2 把新建的对象绑定到构造函数中的this上；
+        //step.3 执行构造函数中的代码
+        //step.4 返回创建的对象
+        lenovo.game();
+        var lenovo1 = new Computer('i5', '8g', '1t');
+        lenovo1.game();
+
+        Computer();
+
+        //构造函数的问题，存在对象中的函数，会随着创建新的对象而创建对应的函数对象。
+        //内存极大的浪费
+        
+
+
+    </script>
+</body>
+</html>

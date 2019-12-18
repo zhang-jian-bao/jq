@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.toBlue{
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<span>❤</span>
+		<span>点赞</span>
+		<span>134</span>
+	</div>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+	$('div span').eq(1).click(function(){
+		//给心变色
+		$('div span').eq(0).toggleClass('toBlue');
+		//改变点赞数量
+		// 根据爱心的是否存在toBlue类，存在true，+1 否则，-1
+		var isZan = $('div span').eq(0).hasClass('toBlue');
+		// console.log(isZan);
+		if(isZan){
+			//获取点赞数量
+			var num = $('div span').eq(2).html()-0;
+			num++;
+			$('div span').eq(2).html(num);
+		}else{
+			//获取点赞数量
+			var num = $('div span').eq(2).html()-0;
+			num--;
+			$('div span').eq(2).html(num);	
+		}
+	})
+	</script>
+</body>
+</html>

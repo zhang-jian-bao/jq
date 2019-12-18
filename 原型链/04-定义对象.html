@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//1.字面量
+	var obj = {};
+	//2.实例化对象
+	var obj = new Object();
+	//3.构造函数
+	function Boys(){
+		this.name="刑龙";
+	}
+	var obj = new Boys();
+	//4.工厂模式:创建对象
+	function createObj(){
+		return new Object();
+	}
+	var obj = createObj();
+
+	//函数命名不同：构造：首字母大写
+	//返回值：
+	//生成对象方式：
+	//调用不同
+
+	// delete obj.属性名
+
+	// obj.方法名()
+	var obj = {name:'张三',age:14};
+	for(i in obj){
+		// console.log(obj.i);//表示obj中存在一个叫i的属性
+		console.log(obj[i]);
+	}
+
+	</script>
+</body>
+</html>

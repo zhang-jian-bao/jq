@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.left {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 300px;
+				height: 100%;
+				background: #eee;
+			}
+			
+			.right {
+				position: absolute;
+				left: 300px;
+				right: 0;
+				height: 100%;
+				background: #F5F5DC;
+			}
+		</style>
+	</head>
+ 
+	<body>
+		<div class="left">
+			<h1>侧边</h1>
+		</div>
+		<div class="right">
+			<button id="btn">隐藏/显示</button>
+		</div>
+	</body>
+	<script type="text/javascript" src = "js/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		// 切换侧边栏
+		$("#btn").click(function() {
+			// var l = $('.right').position().left;
+			var l = parseInt($('.right').css('left'));
+			if(l<300){
+				$('.right').animate({left:'+=300px'},200);
+				$('.left').animate({left:"+=300px"},200);
+			}else{
+				$('.right').animate({left:'-=300px'},200);
+				$('.left').animate({left:"-=300px"},200);
+			}
+		});
+	</script>
+ 
+</html>

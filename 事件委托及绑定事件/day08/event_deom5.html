@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>命名空间</title>
+</head>
+
+<body>
+
+    <script>
+        //
+        var tom = {
+            name: 'tom',
+            age: 18
+        };   //window中
+        //console.log(window.tom);
+        //房间就比作命名空间
+        var room410 = {         //在window中建立一个对象，比作命名空间
+            tom: {
+                name: 'tom',
+                age: 28
+            },
+            mark:{
+                name: 'mark',
+                age: 11
+            },
+            sayHello:function(){
+                console.log('hi');
+            }
+        }
+        var room411 = {         //在window中建立一个对象，比作命名空间
+            tom: {
+                name: 'tom',
+                age: 28
+            },
+            mark:{
+                name: 'mark',
+                age: 11
+            }
+        }
+
+        console.log(window.tom);
+        console.log(room410.tom);
+        console.log(room410.sayHello())
+    </script>
+</body>
+
+</html>

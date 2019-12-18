@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div>
+            <ul>
+                <li>001</li>
+                <li>002</li>
+                <li>003</li>
+                <li>004</li>
+                <li>005</li>
+            </ul>
+        </div>
+        <div id="main">
+            ddfs
+        </div>
+        <!--
+             //step.1 下载jQuery的函数库或者用CDN  
+        -->
+        <!-- //step.2 用script标签引入jQuery的函数库 -->
+        <script src="js/jquery-3.4.1.js"></script>
+        <script>
+            //step.3 定义ready函数，保证dom全部在页面加载完毕
+            $(document).ready(function(){
+                //step.4 编写jQuery的代码，在ready函数的回调函数内。 
+                $('li').css('border', '2px solid red');
+            });//
+
+            //javascript中函数就是一个对象
+            //$既是一个函数，又是一个对象
+            //1.$(),可以传递一个匿名函数，它就是一个ready函数，例子：$(function(){})
+            //2.$(),可以传递一个选择器，它就代表选中页面中的元素。 例子：$('div').css('background', 'blue');
+            //3.$(),可以传递一个HTMLElement，它就代表选中页面中的元素。例子：$(document.getElementById('main')).css('background', 'green');
+            
+
+            //此处使用的是jQuery的扩展选择器，语法：$('选择器:扩展选择器的名')
+            //$('li:first').css('font-size', '30px');
+            //$('li:last').css('font-size', '30px');
+            $('li:odd').css('font-size', '30px').css('color', 'red');
+        </script>
+</body>
+</html>

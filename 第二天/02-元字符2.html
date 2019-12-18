@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// 量词
+	// {2}:匹配前面的字符个数为两个
+	// {1,3}:匹配前面的字符个数为[1,3]
+	//{1,} :匹配前面的字符个数至少有一个
+
+	//元字符
+	//[a-zA-Z0-9_]   匹配任意一个大小写字母、数字或者下划线
+	//\w :就是[a-zA-Z0-9_]
+	//\W:和\w相反
+	//\d:就是[0-9]
+	//\D:和\d相反
+	//\s:匹配空格/换行
+	//\S:和\s相反
+
+	//case1:
+	// var str='var_Dump 0123';
+	// var reg = /[a-z0-9]/gi;
+	// var res = str.replace(reg,'*');
+	// console.log(res);
+
+//case2:
+		//case1:. 匹配任意字符
+		var str = "helloheat,hellohot,hellohit";
+		console.log(str);
+
+		// var reg = /(hat|hot|hit)/g;
+		var reg=/h.{1,2}t/g;
+		var res = str.replace(reg,'*');
+		console.log(res);
+
+//case2	:匹配字母和数字以及_	
+		var str = "hello123@$%^&()_";
+		// var reg =/[a-zA-Z0-9_]/g;
+		var reg = /\w/g; //w:word
+		var res=str.replace(reg,'*');
+		console.log(res);
+//case3:匹配非（字母和数字以及_）
+		var str = "hello123@$%^&()_";
+		// var reg =/[a-zA-Z0-9_]/g;
+		var reg = /\W/g; 
+		var res=str.replace(reg,'*');
+		console.log(res);		
+//		case4:匹配所有的数字，变为*
+		var str = "hello1234,hello123,hello123456789";
+		console.log(str);
+		// var reg =/[0-9]/g;
+		var reg =/\d/g;//d:data 数字
+		var res = str.replace(reg,'*');
+		console.log(res);
+//		case5:匹配所有的数字，变为*
+		var str = "hello 1234,hello123,hello123456789";
+		console.log(str);
+		// var reg =/[0-9]/g;
+		var reg =/\D/g;//d:data 数字
+		var res = str.replace(reg,'*');
+		console.log(res);
+//case6:\s:匹配空格/换行
+		var str = "hel\nlo  boy hel\tlo girl ";
+		console.log(str);
+		var reg=/\s/g;//s:space 空隙
+		var res=str.replace(reg,'');
+		console.log(res);
+
+//case6:\s:匹配空格/换行
+		var str = "hel\nlo  boy hel\tlo girl ";
+		console.log(str);
+		var reg=/\S/g;//s:space 空隙
+		var res=str.replace(reg,'*');
+		console.log(res);
+	</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #main div{
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>01</span>
+        <span>02</span>
+        <span>03</span>
+        <span>04</span>
+    </div>
+    <div>
+        <div id="nav">
+            <ul>
+                <li class="f">01</li>
+                <li>
+                    <ul>
+                        <li>111</li>
+                        <li class="m">222</li>
+                        <li>333</li>
+                    </ul>
+                </li>
+                <li class="m">03</li>
+                <li>04</li>
+                <li>05</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <div>
+            <div>
+                <button>按我</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="sibiling">
+        <ul>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+            <li>05</li>
+        </ul>
+    </div>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            //1.
+            // $("span").first().css('border', '1px solid black');
+            // $("span").last().css('background', 'blue');
+            // $("span").eq(1).css('font-size', '30px');
+            // $("span").not($('span').eq(2)).css('color', 'red');
+            // $('span').slice(1, 3).css('background', 'green');
+
+            //一、后代元素
+            //1.1 children,只会获取到选中元素的直接子元素
+            //console.log($('#nav ul').children().length);
+            // $('#nav > ul').children(':eq(1)').css('border', '1px solid black');
+            //1.2 find, 在选中的元素的后代里面进行查找
+            //$('#nav > ul').find('.m').css('font-size', '40px');
+            //1.3 contents, 获取的是子元素中指定元素的内容
+            //console.log($('#nav > ul .f').contents().text())
+
+            //二、获取祖先元素的方法
+            //2.1 如何获取选中元素的父元素parent()
+            //$('.f').parent().css('border', '1px solid blue');
+            //2.2 获取选中元素的祖先元素parents()
+            //$('.f').parents().css('border', '1px solid blue');
+            //2.3 如何得到离自己最近的匹配选择器参数或者具体元素的祖先元素
+            //$('.f').closest('div').css('border', '1px solid blue');
+            //2.4.如何得到离自己最近的定位祖先元素
+            //$('button').offsetParent().css('border', '1px solid blue');
+            //2.5 在当前匹配的元素集合中获取每个元素的祖先，但不包括选择器、DOM节点或jQuery对象匹配的元素。
+            //console.log($('button').parentsUntil().length) 
+            //$('button').parentsUntil('body').css('border', '1px solid red');
+
+            //三、获取兄弟元素
+            //如何得到选中元素的兄弟元素
+            $('#sibiling ul li:eq(2)').siblings().css('border', '1px solid green');
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// 正则表达式.test(要检测的字符串):
+	// 作用：检测指定字符串是否符合正则表达式
+	// 参数：要检测的字符串
+	// 返回值：匹配成功：返回true  否则，false
+	var str='phhhp';
+	var reg=/ph{3}p/g;
+	var bool = reg.test(str);
+	if(bool){
+		alert('符合');
+	}else{
+		alert('不');
+	}
+
+	</script>
+</body>
+</html>

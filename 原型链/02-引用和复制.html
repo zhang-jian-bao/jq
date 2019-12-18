@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// var a = 1;
+	// var b = a;
+	// a = 2;
+
+	// console.log(a);//2
+	// console.log(b);//1
+	// 引用：传递变量的地址，一般只要对象作为参数，传递的是地址
+	// 复制：传递是变量里面的值，其他五种数据类型作为参数时候，都是复制
+
+//case1:
+	var obj = {name:'张三',age:18};
+	console.log('外部',obj);
+
+	function test(obj){
+		obj.name = '李四';
+		console.log('内部',obj);
+	}
+	test(obj);
+
+	console.log('外部2',obj);
+
+//case2
+	var obj = 1;
+	console.log('外部',obj);//1
+
+	function test(obj){
+		var obj =2;
+		console.log('内部',obj);//2
+	}
+	test(obj);
+	
+	console.log('外部2',obj);//1
+
+	</script>
+</body>
+</html>

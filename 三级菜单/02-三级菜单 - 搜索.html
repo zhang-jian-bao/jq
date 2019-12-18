@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body,ul,li,a{
+			padding:0;
+			margin:0;
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color: #000;
+		}
+		.nav{
+			width: 100%;
+			background: #eee;
+			margin-top: 100px;
+		}
+		.menu{
+			width: 1000px;
+			margin:0 auto;
+			clear: both;
+			background: pink;
+			height: 40px;
+			/*overflow: hidden;*/
+
+		}
+		.menu li{
+			float: left;
+			width: 80px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			position: relative;
+		}
+		.menu li ul{
+			position: absolute;
+			left: 80px;
+			top:0px;
+			display: none;	
+		}
+		.menu>li>ul{
+			left: 0px;
+			top:40px;
+
+		}
+		.menu li ul>li{
+			background: orange;
+			width: 80px;
+		}
+		.menu li ul>li:hover{
+			background: red;
+		}
+		.menu .bgRed{
+			background: red;
+		}
+	</style>
+</head>
+<body>
+
+	<input type="text" id="content">
+	<input type="button" value="搜索" id="search">
+	<div class="nav">
+		<ul class="menu">
+			<li>
+				<a href="javascript:;">首页</a>
+				<ul class="one">
+					<li><a href="javascript:;">首页10</a></li>
+					<li><a href="javascript:;">首页11</a></li>
+					<li><a href="javascript:;">首页12</a></li>
+					<li><a href="javascript:;">首页13</a></li>
+					<li>
+						<a href="javascript:;">首页14</a>
+						<ul class="two">
+							<li><a href="javascript:;">首页20</a></li>
+							<li>
+								<a href="javascript:;">首页21</a>
+								<ul class="tree">
+									<li><a href="javascript:;">首页31</a></li>
+									<li><a href="javascript:;">首页32</a></li>
+								</ul>
+							</li>
+							<li><a href="">首页22</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;">产品中心</a>
+				<ul class="one">
+					<li><a href="javascript:;">产品1</a></li>
+					<li><a href="javascript:;">产品2</a></li>
+					<li><a href="javascript:;">产品3</a></li>
+					<li><a href="javascript:;">产品4</a></li>
+					<li><a href="javascript:;">产品5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;">关于我们</a>
+				<ul class="one">
+					<li><a href="javascript:;">关于我们1</a></li>
+					<li><a href="javascript:;">关于我们2</a></li>
+					<li><a href="javascript:;">关于我们3</a></li>
+					<li><a href="javascript:;">关于我们4</a></li>
+					<li><a href="javascript:;">关于我们5</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
+<script src="考试/js/jquery-3.4.1.js"></script>
+<script>
+	$(function(){
+		$('.menu li').hover(function(){
+			// alert(11);
+			$(this).children('ul').show();
+		},function(){
+			$(this).children('ul').hide();
+		})
+	})	
+
+	//一级菜单搜索
+	// $('#search').click(function(){
+	// 	var uVal = $('#content').val();
+	// 	// alert(uVal);
+	// 	//获取所有的内容
+	// 	$('.menu a').each(function(index,element){
+	// 		// console.log(index,element)
+	// 		var aVal = $(this).html();
+	// 		// console.log(aVal);
+	// 		if(aVal == uVal){
+	// 			$(this).parent().parent().show();
+	// 			$(this).parent().addClass('bgRed').siblings().removeClass('bgRed');
+	// 		}
+	// 	})
+	// })
+	//二级菜单搜索
+	$('#search').click(function(){
+		var uVal = $('#content').val().trim();
+	$('.menu ul').hide();
+		//获取所有的内容
+		$('.menu a').each(function(index,element){
+			// console.log(index,element)
+			var aVal = $(this).html();
+			// console.log(aVal);
+			if(aVal == uVal){
+				// console.log($(this).parents());
+				$(this).parents('ul').show();
+				$(this).parents('li').addClass('bgRed').siblings().removeClass('bgRed');
+			}
+		})
+
+	})
+
+</script>

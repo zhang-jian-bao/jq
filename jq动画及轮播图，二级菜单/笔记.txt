@@ -1,0 +1,26 @@
+1动画的方法
+	显示隐藏  show(动画时间【,回调函数】) hide(动画时间【,回调函数】) toggle(动画时间,回调函数)
+	淡入淡出 fadeIn(动画时间【,回调函数】) fadeOut() fadeToggle(动画时间【,回调函数】)
+	滑入滑出	slideDown(动画时间【,回调函数】) slideUp() slideToggle(动画时间【,回调函数】)
+	
+	animate({},动画时间【,回调函数】)：动画
+	delay(时间):延迟
+	stop()：停止动画
+
+addClass()添加一个类
+removeClass()删除一个类
+toggleClass()切换一个类
+
+eq(index)
+last()
+first()
+hasClass() 判断是否有一个类
+
+find() 查找子元素
+next()查找下一个兄弟元素
+prev()查找上一个兄弟元素
+nextAll()查找后面所有的兄弟元素
+prevAll()查找前面所有的兄弟元素
+siblings()查找所有的兄弟元素
+parent()查找父元素
+

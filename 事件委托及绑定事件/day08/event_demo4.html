@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery的用法，在一个事件处理器中处理多个事件</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script src="js/jquery-3.4.1.js">
+    </script>
+    <script>
+        $(function(){
+            //通常的做法
+            // $('button').on('click', function(){
+            //     console.log('click');
+            // });
+            // $('button').on('mouseover', function(){
+            //     console.log('mouseover');
+            // });
+            // $('button').on('mouseout', function(){
+            //     console.log('mouseout');
+            // });
+            //科学的做法
+            // $('button').on('click mouseover mouseout', {name:'hello',age:22},  function(event){
+            //     //阻止默认行为
+            //     event.preventDefault();
+
+
+            //     //要点：如何获取事件的类型：event.type
+            //     if (event.type == 'click'){
+            //         console.log('click');
+            //     }else if (event.type == 'mouseover'){
+            //         console.log('mouseover');
+            //     }else if (event.type == 'mouseout'){
+            //         console.log('mouseout');
+            //     }
+
+            //     //获取数据；
+            //     console.log(event.data.name);
+            //     console.log(event.data.age);
+            // });
+
+            $('button').click(function(event){
+                //事件对象event
+                console.log(event.bubbles);
+                console.log(event.target);
+                console.log(event.type);
+                console.log(new Date(event.timeStamp));
+            });
+            
+        });//
+    </script>
+</body>
+</html>

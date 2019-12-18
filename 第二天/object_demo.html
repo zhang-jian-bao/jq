@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //创建对象的语法有哪些呢？
+        //字面量
+        var tom = {};               //空对象
+        //构造函数Object
+        var mark = new Object();    //空对象
+
+
+        // tom.name = "汤姆";
+        // tom.age = 20;
+        // tom.song = function(){
+        //     console.log("hahaha");
+        // }
+
+        tom = {
+            name:'汤姆',
+            age :20,
+            song : function(){
+                console.log("hahaha");  
+            }
+        }
+
+        console.log(tom.name);
+        console.log(tom.age);
+        tom.song();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //  任意自拟一个对象，对该对象进行属性的增、删、查、改四个操作。
+        // （15分，时间：15分钟）(***) append()   remove()  
+
+        var obj = {
+            name:'tom',
+            age:21,
+            gender:'男',
+            id:'8238327842783478865'
+        }
+        //第一个问题，给对象添加属性
+        obj.addAttr = function(name, value){
+            this[name] = value;
+        }
+
+        obj.addAttr('hei-ght', '174cm');
+        obj.addAttr('weight', '200');
+        
+        //删除指定属性
+        obj.delAttr = function(a){
+            delete this[a];
+        }
+
+        ///obj.delAttr('name');
+        //obj.delAttr('gender');
+
+        //查询指定属性是否在对象中存在
+        obj.queryAttr = function(name){
+           return name in this
+        }
+
+        //改对象中指定的属性名
+        obj.updateAttr = function(oldName, newName, newValue){
+            //判断oldName在不在对象中，在就改成newName,不在添加newName
+            if(this.queryAttr(oldName)){
+                var tmpValue = this[oldName];
+                delete this[oldName];
+                this[newName] = tmpValue;
+            }else{
+                this[newName] = newValue;
+            }
+        }
+
+        obj.updateAttr('name' , 'firstName');
+        console.log(obj)
+        //console.log(obj.queryAttr('name'));
+
+        //console.log(obj);
+
+    </script>
+</body>
+</html>

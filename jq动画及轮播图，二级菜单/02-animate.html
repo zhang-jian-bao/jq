@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div{
+		width: 100px;
+		height: 100px;
+		background: red;
+		position: absolute;
+		left:100px;
+	}
+	</style>
+</head>
+<body>
+	<input type="button" value="开始动画">
+	<input type="button" value="停止动画">
+
+	<div></div>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+	$(':button:eq(0)').click(function(){
+		// alert(1);
+		// $('div').animate({left:'100px'},1000);//不动。因为本身就是left:100
+		// $('div').animate({left:'200px'},1000);
+		// $('div').animate({left:'+=100px'},1000);//在原来基础上，移动100
+
+		// $('div').animate({height:'toggle',opacity:'toggle'},1000);//
+		$('div').animate({left:'+=1000'},2000,function(){
+			// alert(1);
+			$(this).animate({left:'-=1000'},2000);
+			// $(this).delay(3000).animate({left:'-=1000'},2000);
+
+		});
+
+	})
+	$(':button:eq(1)').click(function(){
+		$('div').stop();
+	})
+	</script>
+</body>
+</html>

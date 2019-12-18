@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body,div,ol,ul,li,img{
+		padding:0;
+		margin:0;
+		list-style: none;
+	}
+	.box{
+		height: 2000px;
+	}
+	.box .head{
+		width: 1284px;
+		margin:0 auto;
+		background: pink;
+	}
+	.head .search{
+		height: 160px;
+		background: #eee;
+	}
+	/*nav 开始*/
+	.nav{
+		height: 50px;
+	}
+	.nav ul{
+		clear: both;
+	}
+	.nav ul>li{
+		float: left;
+		padding:0px 30px;
+		line-height: 50px;
+	}
+	.nav ul>li:nth-of-type(1){
+		background: red;
+		position: relative;
+	}
+	.nav ul>li:nth-of-type(1) ol{
+		position: absolute;
+		top:50px;
+		left: 0;
+		background: #eee;
+		width: 130px;
+		display: none;
+	}
+	/*nav 结束*/
+	/*轮播图 开始*/
+	.lunbo{
+		width: 100%;
+		overflow: hidden;
+		/*background: red;*/
+		position: relative;
+	}
+	.lunbo ul{
+		clear: both;
+		width: 10000px;
+	}
+	.lunbo ul>li{
+		float: left;
+	}
+	.lunbo img{
+		/*display: block;*/
+		vertical-align: top;
+		/*去掉图片三像素问题*/
+	}
+	.lunbo ol{
+		position: absolute;
+		bottom: 0px;
+		left: 50%;
+		/*background: red;*/
+		clear: both;
+		margin-left: -260px;
+
+	}
+	.lunbo ol>li{
+		float: left;
+		width: 130px;
+		background:pink;
+		height: 44px;
+		line-height: 44px;
+		text-align: center;
+		margin-right: 10px;
+	}
+	/*轮播图 结束*/
+	</style>
+</head>
+<body>
+	
+
+<!-- 	1.布局
+		a.分析骨架 ：div>div*2
+		b.添加样式
+	2.功能实现 -->
+
+	<div class="box">
+		<!-- 头部 -->
+		<div class='head'>
+			<div class="search"></div>
+			<!-- 导航 -->
+			<div class="nav">
+				<ul>
+					<li>
+						<div>全部类目</div>
+						<ol>
+							<li>11</li>
+							<li>22</li>
+							<li>33</li>
+							<li>44</li>
+							<li>55</li>
+							<li>66</li>
+							<li>77</li>
+						</ol>
+					</li>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 轮播图-->
+		<div class="lunbo">
+			<ul>
+				<li><img src="img/ban1.jpg" alt=""></li>
+				<li><img src="img/ban2.jpg" alt=""></li>
+				<li><img src="img/ban3.jpg" alt=""></li>
+				<li><img src="img/ban4.png" alt=""></li>
+			</ul>
+			<ol>
+				<li>七匹狼</li>
+				<li>早餐</li>
+				<li>个人清洁</li>
+				<li>厨房调料</li>
+			</ol>
+		</div>
+	</div>
+
+</body>
+</html>

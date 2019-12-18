@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//元字符：
+	//[a-z]:匹配小写a-z字母
+	//[A-Z]:匹配所有的大写字母
+	// [^abc] 查找任何不在方括号之间的字符。 
+	// [0-9] 查找任何从 0 至 9 的数字。 
+	// (red|blue|green) 查找任何指定的选项。
+
+	//case1:将good morning中o替换为o-
+	// var str = "good morning";
+	// // var res = str.replace('o','o-');
+	// var pattern = /o/g;//正则表示式 g:表示global 全部，所有的
+	// var res = str.replace(pattern,'o-');
+	// console.log(res);
+
+	//case2:将good mOrning中字母o替换为o-
+	// var str = "good mOrning";
+	// // var res = str.replace('o','o-');
+	// var pattern = /o/gi;//正则表示式 g:表示global 全部，所有的
+	// 					//i:ignore 忽略大小写
+	// var res = str.replace(pattern,'o-');
+	// console.log(res);
+
+	//case3:将gooD mOrning中的非小写字母替换为*
+	// var str="gooD mOrning";
+	// var pattern=/[^a-z]/g;
+	// var res = str.replace(pattern,'*');
+	// console.log(res);
+	//case4:将"凤姐,这是谁的老公？他妈的，这是谁的2b铅笔？你妹的"中的敏感词替换为*
+	// var str="凤姐,这是谁的老公？他妈的，这是谁的2b铅笔？你妹的";
+	// var pattern=/(他妈的|2b|你妹的|凤姐)/g;
+	// var res =str.replace(pattern,'*');
+	// console.log(res);
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/购物车.css" />
+	</head>
+	<body>
+		<div class="box">
+			<div class="header">
+				<img src="img/021.jpg"/>
+				<img src="img/022.jpg"/>
+				<img src="img/023.jpg"/>
+				<img src="img/024.jpg"/>
+				<img src="img/025.jpg"/>
+			</div>
+			输入商品价格：<input type="text" class="jiage" /><br />
+			输入商品数量：<input type="text" class="shuliang" /><br />
+			<button class="tian">添加</button>
+			<table>
+				<tr>
+					<th>选择</th>
+					<th>商品</th>
+					<th>价格</th>
+					<th>数量</th>
+					<th>单价</th>
+					<th>操作</th>
+				</tr>
+				<tr style="display: none;">
+					<td><input type="checkbox"/></td>
+					<td><img src="img/021.jpg"/></td>
+					<td>1000</td>
+					<td>
+						<button class="jia">+</button>
+						<input type="text" value="3"  class="sl"/>
+						<button class="jian">-</button>
+					</td>
+					<td>3000</td>
+					<td><button class="sc">删除</button></td>
+				</tr>
+			</table>
+			总价：<a>￥0元</a><br />
+			<button class="xz">选中删除</button>
+		</div>
+	</body>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/购物车.js"></script>
+	
+</html>

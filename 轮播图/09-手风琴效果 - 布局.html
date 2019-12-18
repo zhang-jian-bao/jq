@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body,ul,ol,li,div,h4{
+			padding:0;
+			margin:0;
+			list-style: none;
+		}
+		.box{
+			width: 100px;
+			margin-left: 100px;
+			background: pink;
+		}
+		.box ul>li{
+			/*height: 40px;
+			line-height: 40px;*/
+			text-align: center;
+			font-size: 20px;
+			margin-bottom: 5px;
+			background: #eee;
+		}
+		.box ol{
+			background: #222;
+			display: none;
+		}
+		.box ol>li{
+			border-bottom: 2px solid #fff;
+		}
+	</style>
+</head>
+<body>
+	<!-- div.box>ul>li*4>div+ol>li*4 -->
+	<div class="box">
+		<ul>
+			<li>
+				<h4>首页</h4>
+				<ol>
+					<li>首页</li>
+					<li>首页</li>
+					<li>首页</li>
+					<li>首页</li>
+				</ol>
+			</li>
+			<li>
+				<h4>商城</h4>
+				<ol>
+					<li>商城</li>
+					<li>商城</li>
+					<li>商城</li>
+					<li>商城</li>
+				</ol>
+			</li>
+<!-- 			<li>
+				<h4>下载</h4>
+				<ol>
+					<li>下载</li>
+					<li>下载</li>
+					<li>下载</li>
+					<li>下载</li>
+				</ol>
+			</li>
+			<li>
+				<h4>论坛</h4>
+				<ol>
+					<li>论坛</li>
+					<li>论坛</li>
+					<li>论坛</li>
+					<li>论坛</li>
+				</ol>
+			</li> -->
+		</ul>
+	</div>
+	<script>
+
+	</script>
+</body>
+</html>

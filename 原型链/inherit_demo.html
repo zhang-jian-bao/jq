@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        
+        function Father(name){
+            this.name = name;
+        }
+        Father.prototype.say = function(){
+            console.log('my name is' + this.name);
+        }
+
+        var tom = new Father('tom');
+
+        function Son(){
+        }
+        //子类的原型指向父类实例
+        Son.prototype = tom;
+
+        var smallTom = new Son();
+        smallTom.say();
+    </script>
+</body>
+</html>

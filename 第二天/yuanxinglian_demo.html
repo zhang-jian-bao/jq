@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //原型、原型的查找
+        //原型链:所有的对象都有一个属性__proto__，该属性指向创建这个对象的构造函数的原型
+
+        function Person(name){
+            this.name = name;
+        }
+
+        Person.prototype.say = function(){
+            console.log(this.name  + "hi ");
+        }
+        Person.prototype.name = 100;
+
+        var tom = new Person('tom');
+
+        console.log(tom.toString());
+        console.log(tom.name)
+    </script>
+</body>
+</html>

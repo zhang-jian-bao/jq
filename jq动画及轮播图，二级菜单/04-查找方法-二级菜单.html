@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body,ol,ul,li,div{
+		padding:0;
+		margin:0;
+		list-style: none;
+	}
+	.box{
+		width: 800px;
+		height: 40px;
+		margin:0 auto;
+		background: pink;
+	}
+	.box ul{
+		/*overflow: hidden;*/
+		clear: both;
+	}
+	.box ul>li{
+		float: left;
+		padding:0px 20px;
+		height: 40px;
+		line-height: 40px;
+		position: relative;
+	}
+	.box ul>li:hover{
+		background: orange;
+	}
+	.box ol{
+		background: #ddd;
+		position: absolute;
+		top:40px;
+		left: 0px;
+		/*padding:0px 10px;*/
+		width: 60px;
+		text-align: center;
+		display: none;
+	}
+	.box ol>li:hover{
+		background: orange;
+	}
+	.box2{
+		background: #333;
+	}
+	</style>
+</head>
+<body>
+	<!--  -->
+	<div class="box">
+		<ul>
+			<li>
+				<div>首页</div>
+				<ol>
+					<li>首页</li>
+					<li>首页</li>
+					<li>首页</li>
+				</ol>
+			</li>
+			<li>
+				<div>按摩店</div>
+				<ol>
+					<li>按摩店</li>
+					<li>按摩店</li>
+					<li>按摩店</li>
+				</ol>
+			</li>
+			<li>
+				<div>足疗店</div>
+				<ol>
+					<li>足疗店</li>
+					<li>足疗店</li>
+					<li>足疗店</li>
+				</ol>
+			</li>
+		</ul>
+	</div>
+	<div class="box2">我们都是孩子</div>
+	<script type="text/javascript" src = "js/jquery-3.4.1.js"></script>
+	<script>
+	//1.布局
+		// 1.分析骨架
+		// 2.添加样式
+			//注意：1.清除浮动：clear:both
+					// 2.导航项中ol使用定位
+	//2.功能
+	$('.box ul>li').mouseover(function(){
+		$(this).find('ol').show();
+	})
+	$('.box ul>li').mouseout(function(){
+		$(this).find('ol').hide();
+	})
+	</script>
+</body>
+</html>

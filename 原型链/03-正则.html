@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		// var str = '490724276@qq.com';
+	// var str = 'zhang_heng@usian.cn';
+	// // zhangsan@163.com
+	// // var reg = /\w{1,}@[a-zA-Z0-9]{2,5}\.[a-zA-Z]{2,3}/;
+	// var reg = /^\w    {1,}@[a-zA-Z0-9]{2,5}\.[a-zA-Z]{2,3}$/;
+	// var res = reg.test(str);
+	// console.log(res);
+
+
+function Fu(name) {
+    this.name = name;
+}
+function Zi() {
+	Fu.call(this,'张三');
+}
+var obj = new Zi();
+console.log(obj.name);
+
+	</script>
+</body>
+</html>

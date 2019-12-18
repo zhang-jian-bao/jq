@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="nav">
+
+    </div>
+
+        <!-- 1、利用继承完成一个，一个按钮既能改变字体的大小，又能改变字体背景颜色的方法。 -->
+
+        <script>
+            
+            function MyButton(name, color){
+                if (name == undefined && color == undefined){
+                    return;
+                }else{
+                    this.btn = document.createElement('button');
+                    this.btn.innerHTML = name;
+                    this.btn.style.background = color;
+                    document.getElementById('nav').appendChild(this.btn);
+                }
+            }
+            var randColor = 'rgb(' + parseInt(Math.random() * 256) + ',' + 
+                parseInt(Math.random() * 256) + ',' + parseInt(Math.random() * 256) + ')';
+
+            MyButton.prototype.changeFontSize = function(a){
+                this.btn.style.fontSize = a + 'px';
+            }
+            MyButton.prototype.changeFontColor = function(a){
+                this.btn.style.color = a;
+            }
+            function SonButton(name, color){
+                MyButton.call(this, name, color);
+            }
+            SonButton.prototype = new MyButton();
+            var ssb = new SonButton('我是子类的按钮', randColor);
+            ssb.changeFontSize(40)
+            ssb.changeFontColor('white')
+        </script>
+</body>
+</html>

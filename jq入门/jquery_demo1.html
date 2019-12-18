@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #nav ul{
+            list-style-type: none;
+        }
+        #nav ul li {
+            float:left;
+            width: 100px;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <ul>
+            <li>0001</li>
+            <li>0002</li>
+            <li>0003</li>
+            <li>0004</li>
+            <li>0005</li>
+            <li>0006</li>
+            <li>0007</li>
+            <li>0008</li>
+            <li>0009</li>
+            <li>0010</li>
+        </ul>
+    </div>
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/myutils.js"></script>
+    <script>
+        // var lis = document.getElementsByTagName('li');
+        // for(var i = 0; i < lis.length;i++){
+        //     lis[i].style.border = "1px solid black";
+        // }
+        
+        console.log($); //因为myutils.js中存在一个变量$, 变量的污染
+        //改变jquery引用符号
+        var $$ = jQuery.noConflict(); 
+
+        //jquery的ready函数
+        $$(document).ready(function(){
+            //在此处写jquery的代码
+            $$('li').css('border', "1px solid red");
+        }); //
+        
+
+        $$(function(){
+
+        }); ///
+
+        //$是什么呢？
+
+    </script>
+</body>
+
+</html>

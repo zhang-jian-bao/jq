@@ -1,0 +1,41 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+img{
+	vertical-align: top;
+	width: 100px;
+	height: 100px;
+}
+.box{
+	width: 1200px;
+	margin: auto;
+}
+input{
+	line-height: 20px;
+	margin: 10px;
+}
+table,tr,th{
+	border-collapse: collapse;
+	height: 30px;
+	line-height: 30px;
+}
+tr{
+	border: 1px solid black;
+}
+td,th{
+width: 200px;
+text-align: center;
+}
+.sl{
+	width: 60px;
+	text-align: center;
+}
+.jia,.jian{
+	width: 20px;
+	height: 30px;
+}
+.active{
+	border: 1px solid #4169E1;
+}

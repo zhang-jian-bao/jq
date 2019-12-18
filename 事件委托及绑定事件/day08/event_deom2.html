@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery中的 one</title>
+    <style>
+        li {
+            width: 100px;
+            height: 30px;
+            background-color: blueviolet;
+            border: 2px solid black;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <ul>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+            <li>05</li>
+        </ul>
+    </div>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+            //1.one：为jQuery对象内含元素添加一个事件处理函数，
+            //支持可选的data参数;该事件处理函数一旦被触发执行就会自动撤销绑定(即至多执行一次)
+            // $('#nav ul li').one('click', function(event){
+            //     console.log($(this).text());
+            // })
+
+            //2.1 on：为jQuery选定的元素注册一个或多个事件的事件处理程序函数
+            //选择器应该是所选元素的子元素
+            var fn = function(e){
+                console.log($(this).text() + e.data.name);
+            }
+            $('#nav ul').on('click', 'li:eq(2)', {name:'hello'}, fn);
+           
+            $('#nav ul').on('click', function(){
+                console.log('hehe');
+            });
+            //2.2 off: 为jQuery选定的元素移除一个或多个事件的事件处理程序函数
+            $('#nav ul').off('click', fn);
+
+            
+
+
+        }); //
+    </script>
+</body>
+
+</html>

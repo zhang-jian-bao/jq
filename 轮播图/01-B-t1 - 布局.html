@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*css init start*/
+		body,ul,li,ol,strong,i,img,p{
+			margin:0;
+			padding:0;
+			list-style: none;
+			font-style: normal;
+		}
+		/*css init end*/		
+		/*轮播图布局开始*/
+		.box{
+			width: 360px;
+			margin:100px auto;
+			background: pink;
+			padding:20px 20px 0px 20px;
+			overflow: hidden;
+			position:relative;/*为了左右箭头*/
+		}
+		.box p{
+			margin-bottom: 20px;
+		}
+		.box ul{
+			width: 10000px;
+			overflow: hidden;
+		}
+		.box ul li{
+			float: left;
+			margin-right: 20px;
+		}
+		.box img{
+			width: 360px;
+			height: 300px;
+		}
+		.box ul p{
+			padding:20px 0px;
+		}
+		.box div span{
+			width: 20px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			color: #fff;
+			position:absolute;
+			top:200px;
+			left: 0px;
+
+			background: #eee;
+		}
+		.box div span:nth-of-type(2){
+			left: 380px;
+		}
+		.box ol{
+			/*background: red;*/
+			overflow: hidden;
+			position: absolute;
+			bottom:10px;
+			left: 200px;
+			margin-left: -44px;/*ol宽度的一半*/
+		}
+		.box ol li{
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			border: 2px solid #eee;
+			float: left;
+			margin-right: 10px;
+
+		}
+		/*轮播图布局结束*/
+
+	</style>
+</head>
+<body>
+	<!-- .box 负责轮播图位置 -->
+	<div class="box">
+	<!-- 标题 -->
+		<p>
+			<strong>觅me</strong> <span>></span><i>探索生活</i>
+		</p>
+		<!-- 轮播内容 -->
+		<ul>
+			<li>
+				<img src="img/凤姐.jpg" alt="">
+				<p>凤姐.jpg</p>
+			</li>
+			<li>
+				<img src="img/花姑娘.jpg" alt="">
+				<p>花姑娘.jpg</p>
+			</li>
+			<li>
+				<img src="img/长得丑.jpg" alt="">
+				<p>长得丑.jpg</p>
+			</li>
+		</ul>
+		<!-- 左右箭头 -->
+		<div>
+			<span><</span>
+			<span>></span>
+		</div>
+		<!-- 小圆点 -->
+		<ol>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div>
+</body>
+</html>
